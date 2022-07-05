@@ -23,8 +23,10 @@ const todos = [
   },
 ];
 
-function findAll() {
+export function findAll() {
   return todos;
 }
 
-module.exports = { findAll };
+export function findById(id) {
+  return todos.find((todo) => todo.id === parseInt(id, 10));
+}

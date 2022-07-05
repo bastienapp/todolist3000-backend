@@ -1,7 +1,8 @@
-const express = require("express");
-const { getAll } = require("../controllers/todos.controller");
+import express from "express";
+import { getAll, getOne } from "../controllers/todos.controller.js";
 const router = express.Router();
 
 router.get("/", getAll);
+router.get("/:id", getOne);
 
-module.exports = router;
+export default router;

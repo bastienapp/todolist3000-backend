@@ -1,7 +1,10 @@
-const { findAll } = require("../models/todos.models");
+import { findAll, findById } from "../models/todos.models.js";
 
-function getAll(request, response) {
+export function getAll(request, response) {
   response.send(findAll());
 }
 
-module.exports = { getAll };
+export function getOne(request, response) {
+  const { id } = request.params;
+  response.send(findById(id));
+}
